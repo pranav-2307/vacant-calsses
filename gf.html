@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Compliments</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .heart-button {
+            font-size: 30px;
+            cursor: pointer;
+            color: red;
+            animation: heartbeat 1s infinite;
+            border: none;
+            background: none;
+            outline: none;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hey, Beautiful! 💖</h2>
+        <p id="compliment">Click the heart for a sweet surprise!</p>
+        <button class="heart-button" onclick="showCompliment()">❤️</button>
+    </div>
+    <script>
+        const compliments = [
+            "You make my world brighter! ☀️",
+            "You're the most amazing person ever! 💕",
+            "I love the way you smile! 😊",
+            "You have the kindest heart! ❤️",
+            "You're simply breathtaking! 😍",
+            "I’m the luckiest to have you! 💖",
+            "You're my dream come true! ✨"
+        ];
+
+        function showCompliment() {
+            const complimentElement = document.getElementById("compliment");
+            const randomIndex = Math.floor(Math.random() * compliments.length);
+            complimentElement.textContent = compliments[randomIndex];
+        }
+    </script>
+</body>
+</html>
